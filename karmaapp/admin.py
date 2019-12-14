@@ -4,6 +4,20 @@ from .models import *
 from import_export.admin import ImportExportModelAdmin
 
 
-@admin.register(Cilindro,Block,Tipo_de_espuma,Tipo_de_unidad,Defecto,Ajuste,Cliente )
+@admin.register(
+    Cilindro,
+    Block,Tipo_de_espuma,
+    Tipo_de_unidad,
+    Defecto,
+    Ajuste,
+    Cliente,
+    Medidas_de_producto, 
+    # Categoria,
+    Categoria_de_dimension,
+    Maquina,
+    Figura,
+
+    
+    )
 class ViewAdmin(ImportExportModelAdmin):
     pass
