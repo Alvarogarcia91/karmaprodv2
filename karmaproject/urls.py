@@ -15,13 +15,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include ,path
+from django.urls import path, include, re_path
+from shop import views
 #from users import views as user_views
 from django.conf import settings
 from django.conf.urls.static import static
 
+
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('karmaapp.urls')),
+    path('karmaapp', include('karmaapp.urls')),
+    path('', views.index, name='index'),
+    path('shop/', include('shop.urls')),
+    path('pruebadisplays', views.pruebadisplays, name='pruebadisplays'),
 ]
 
 
