@@ -26,8 +26,12 @@ def allProdCat(request, c_slug=None):
 		products_list = Product.objects.filter(category=c_page,available=True)
 	else:
 		products_list = Product.objects.all().filter(available=True)
-	
-	
+	'''Pagination code'''
+	paginator = Paginator(products_list, 6)
+	try:
+		page = int(request.GET.get('page','1'))
+	except:
+		page = 1
 		products_list = Product.objects.all().filter(available=True)
 	return render(request,'shop/category.html',{'category':c_page,'products_list':products_list})
 

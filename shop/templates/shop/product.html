@@ -28,7 +28,7 @@
 						{% if product.stock <= 0%}
 							<p class="text-justify my_prod_text"><b>Out of Stock,Este tipo de espuma ya no se fabrica</b></p>
 						{% else %}
-							<a class="btn btn-secondary" href="#">Agregar a orden de Corrida</a>
+							<a class="btn btn-secondary" href="{% url 'cart:add_cart' product.id %}">Agregar a orden de Corrida</a>
 						{% endif %}
 					</div>
 				</div>
